@@ -5,7 +5,12 @@ Project in CS675 - Computational Linear Algebra
 
 1. The folder 'Krylov_subspace_method' contains implementation of `GMRES`, `BiCG`, and `IDR(s)` methods. 
 
-2. The folder 'PoissonPDE' builds the finite difference scheme for {1D,2D,3D} for Poisson PDE equations with 2 heat sources temperature. The `Laplacian` returns the matrix A corresponds to the lhs of finite difference scheme and matrix b of source terms. 
+2. The folder 'PoissonPDE' builds the finite difference scheme for {1D,2D,3D} for Poisson PDE equations with 2 heat sources temperature. The `Laplacian` returns the matrix A corresponds to the lhs of finite difference scheme and matrix b of source terms: 
+
+- `Laplacian` takes 2 inputs: `m`: number of discretized points corresponding to each dimensions and `dim`: 1D, 2D, 3D: 
+  * `[A,b] = Laplacian(10, '1D')` returns A is a 10-by-10 matrix and b is a 10-by-1 vector.
+  * `[A,b] = Laplacian(10, '2D')` returns A is a 100-by-100 matrix and b is a 100-by-1 vector.
+  * `[A,b] = Laplacian(10, '3D')` returns A is a 1000-by-1000 matrix and b is a 1000-by-1 vector.
 
 3. The folder 'Image_Denoising' builds the PDE-constrained equation to denoise the camera-man image (tif). 
 
