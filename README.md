@@ -1,7 +1,7 @@
 # CS675_Project: A survey of Krylov Subspace methods for nonsymmetric linear systems.
 Project in CS675 - Computational Linear Algebra
 
-## Direction: 
+## Features:  
 
 1. The folder 'Krylov_subspace_method' contains implementation of `GMRES`, `BiCG`, and `IDR(s)` methods. 
 
