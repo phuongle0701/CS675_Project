@@ -3,7 +3,7 @@ Project in CS675 - Computational Linear Algebra
 
 ## Direction: 
 
-1. The folder 'Krylov_subspace_method' contains implementation of GMRES, BiCG, and IDR(s) methods. 
+1. The folder 'Krylov_subspace_method' contains implementation of `GMRES`, `BiCG`, and `IDR(s)` methods. 
 
 2. The folder 'PoissonPDE' builds the finite difference scheme for {1D,2D,3D} for Poisson PDE equations with 2 heat sources temperature. The `Laplacian` returns the matrix A corresponds to the lhs of finite difference scheme and matrix b of source terms. 
 
