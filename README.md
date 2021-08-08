@@ -12,7 +12,11 @@ Project in CS675 - Computational Linear Algebra
   * `[A,b] = Laplacian(10, '2D')` returns A is a 100-by-100 matrix and b is a 100-by-1 vector.
   * `[A,b] = Laplacian(10, '3D')` returns A is a 1000-by-1000 matrix and b is a 1000-by-1 vector.
 
-3. The folder 'Image_Denoising' builds the PDE-constrained equation to denoise the camera-man image (tif). 
+3. The folder 'Image_Denoising' builds the PDE-constrained equation to denoise the image for grid size `[64,128]`. 
+
+* The `FormMatrix` is to form the Total Variation Scheme Matrix of PDE-constrained equation. 
+* The `Denoise` is to run the Krylov subspace method to denoise the image for a given grid size. 
+* The `DenoiseFunc` is to run the algorithm of image denoising. 
 
 
 
