@@ -26,6 +26,9 @@ Project in CS675 - Computational Linear Algebra
 * The `DenoiseFunc` is to run the algorithm of image denoising. 
 
 
+![plot3](./figures/denoised_img_128.png)
+
+
 
 
 ## References:
