@@ -25,10 +25,9 @@ end
 
 n = size(A, 1);
 restart  = min(n, 10); 
-M = eye(n);
 x = zeros(n, 1);
 r = b - A * x;
-r = M \ r;
+
 residual = norm(r);
 iter = 1;
 resvec = zeros(maxit * restart + 1, 1);
@@ -39,14 +38,13 @@ flag = 1;
 % main loop: 
 while ((iter < maxit) && (residual > tol))
     
-	[V, H, beta] = Arnoldi_MGS(A, r, restart, M);
+	[V, H, beta] = Arnoldi_MGS(A, r, restart);
 	[y, resnorms]  = UpperHessenLeastSquare(H, beta); 
 	z = V(:, 1 : restart) * y(1 : restart);
 
 	x = x + z;
 	r = b - A * x;
-	r = M \ r;
-    
+    residual = norm(r,2);
 	for j = 1 : restart
 		iter = iter + 1;
 		resvec(iter) = resnorms(j);

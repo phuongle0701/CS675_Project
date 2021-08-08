@@ -13,7 +13,7 @@
 % relres = final converged relative residuals (2-norm). 
 % iter = number of iterations taken to converge. 
 % resvec = vector to store the residuals at each iteration. 
-function [x, flag,relres,iter,resvec] = BiCG(A,b,x0,tol, maxit)
+function [x, flag,relres,iter,resvec] = BiCG(A,b,x0,tol,maxit)
 n = size(A,1); 
 x = x0; 
 r = b - A*x; 
@@ -51,7 +51,6 @@ while ((iter < maxit) && (residual >= tol))
     ps = rs + beta * ps; 
     Ap = A*p; 
     ATps = AT * ps; 
-    
     
     iter = iter + 1; 
     residual = norm(r,2); 
