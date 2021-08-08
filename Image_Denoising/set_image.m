@@ -1,14 +1,27 @@
-function [u_exact, u0] = set_image(noiseLevel,DimensionSize)
-% the script is to read the camera-man image and add noise to it with
-% the corresponding Gaussian mean and variance. 
-image_exact = imread('cameraman.tif');
-% re-scale the image to dimensionSize of problem and convert to double
-% precision: 
-u_exact = im2double(imresize(image_exact, DimensionSize)); 
+function [u_exact,z]=set_image(n)
 
+%
+% Set up 2D image for image denoising.
+%
+nsq = n*n;
+h = 1/(n+1);
 
-% add random noise to the image: 
+% n_s_ratio is the noise_to_signal ratio which controls the size of
+% the noise. You may increase or decrease it.
+n_s_ratio = 1.0;
+    
+%  Evaluate exact solution at point P = [x,y].
+xvec = [h:h:1-h];
+yvec = [h:h:1-h];
+[x,y] = meshgrid(xvec,yvec);
+r1 = sqrt((x - .5).^2 +(y - .5).^2) ;
+r2 = sqrt((x-.5).^2/2 + (y-.5).^2);
+u_exact = -.5*(r1<.2) + (r2<.3);
+    
+%  Add random noise to data.
 randn('seed',0);
-u0 = u_exact+noiseLevel*randn(size(u_exact));
-u0 = (u0-min(min(u0)))/(max(max(u0))-min(min(u0)));
+stddev = norm(u_exact,'fro')*n_s_ratio / sqrt(nsq);
+z = u_exact + stddev * randn(n,n);
+
+
 end 
