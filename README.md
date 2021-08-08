@@ -16,6 +16,9 @@ Project in CS675 - Computational Linear Algebra
 
 ![plot1](./figures/fig1.png)
 
+
+![plot2](./figures/fig2.png)
+
 3. The folder 'Image_Denoising' builds the PDE-constrained equation to denoise the image for grid size `[64,128]`. 
 
 * The `FormMatrix` is to form the Total Variation Scheme Matrix of PDE-constrained equation. 
