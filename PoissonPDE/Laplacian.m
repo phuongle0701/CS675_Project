@@ -27,7 +27,8 @@ end
 
 
 % 1D laplacian
-function [A,b] = Lap1D(n)
+function [A,b] = Lap1D(N)
+ 
 h = 1/(n+1); 
 e = ones(n,1); 
 % Build the stencil matrix 1D. 
@@ -46,7 +47,7 @@ for i = 1:n
 end
 end 
 %2D laplacian
-function [A,b] = Lap2D(n)
+function [A,b] = Lap2D(n) 
 h = 1/(n+1); 
 e = ones(n,1); 
 % We form the 1D stencil matrices in each dimension. 
@@ -73,6 +74,7 @@ b = reshape(b, [size(b,1)*size(b,2), 1]);
 end 
 % 3D laplacian
 function [A,b] = Lap3D(n)
+
 h = 1/(n+1); 
 e = ones(n,1); % ones element vector. 
 % the sparse matrix in each dimension x,y,z: 
